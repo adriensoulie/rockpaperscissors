@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function ComputerPlay() {
+    var textArray = [
+        'Rock',
+        'Paper',
+        'Scissors'
+    ];
+    var randomNumber = textArray[Math.floor(Math.random()*textArray.length)];
+    console.log(randomNumber); // Marche correctement
+
+}
+ComputerPlay()
+
+function PlayerSelection(){
+    var textArrayUser= [
+        'Rock',
+        'Paper',
+        'Scissors'
+    ];
+    var randomUserNumber = textArrayUser[Math.floor(Math.random()*textArrayUser.length)];
+    console.log(randomUserNumber); // Marche correctement
+
+}
+PlayerSelection()
+
+function playRound(){
+var compare = function(PlayerSelection, ComputerPlay){
+    if (PlayerSelection===ComputerPlay){
+        return 'It\'s a tie';
+    }
+    if (PlayerSelection === "rock") {
+                if (ComputerPlay === "scissors") {
+                    // rock wins
+                    return "You win!";
+                } else {
+                    // paper wins
+                    return "You lose! Try again.";
+                }
+            }
+            if (PlayerSelection === "paper") {
+                if (ComputerPlay === "rock") {
+                    // paper wins
+                    return "You win!";
+                } else {
+                    // scissors wins
+                    return "You lose! Try again.";
+                }
+            }
+            if (PlayerSelection === "scissors") {
+                if (ComputerPlay === "rock") {
+                    // rock wins
+                    return "You lose! Try again.";
+                } else {
+                    // scissors wins
+                    return "You win!";
+                }
+            }
+        };
+}
+var results = compare(PlayerSelection,ComputerPlay);
+console.log(results())
+
+/*
+Paper>Rock
+Rock>Scissors
+Scissors>Paper
+else renvoyé 'Egalité' */
+
+
+</script>
+</body>
+</html>
