@@ -8,37 +8,36 @@
 </head>
 <body>
 <script>
+
 function ComputerPlay() {
     var textArray = [
-        'Rock',
-        'Paper',
-        'Scissors'
+        'rock',
+        'paper',
+        'scissors'
     ];
-    var randomNumber = textArray[Math.floor(Math.random()*textArray.length)];
-    console.log(randomNumber); // Marche correctement
-
+    return textArray[Math.floor(Math.random()*textArray.length)];
+    console.log(ComputerPlay); // test to see if its working fine (it is)
 }
-ComputerPlay()
 
-function PlayerSelection(){
+
+function PlayerPlay(){
     var textArrayUser= [
-        'Rock',
-        'Paper',
-        'Scissors'
+        'rock',
+        'paper',
+        'scissors'
     ];
-    var randomUserNumber = textArrayUser[Math.floor(Math.random()*textArrayUser.length)];
-    console.log(randomUserNumber); // Marche correctement
+    return textArrayUser[Math.floor(Math.random()*textArrayUser.length)];
 
+    console.log(PlayerPlay); // test to see if its working fine (it is)
 }
-PlayerSelection()
 
-function playRound(){
-var compare = function(PlayerSelection, ComputerPlay){
-    if (PlayerSelection===ComputerPlay){
+
+function playRound(player, computer){
+    if (player===computer){
         return 'It\'s a tie';
     }
-    if (PlayerSelection === "rock") {
-                if (ComputerPlay === "scissors") {
+    if (player === "rock") {
+                if (computer === "scissors") {
                     // rock wins
                     return "You win!";
                 } else {
@@ -46,8 +45,8 @@ var compare = function(PlayerSelection, ComputerPlay){
                     return "You lose! Try again.";
                 }
             }
-            if (PlayerSelection === "paper") {
-                if (ComputerPlay === "rock") {
+            if (player === "paper") {
+                if (computer === "rock") {
                     // paper wins
                     return "You win!";
                 } else {
@@ -55,8 +54,8 @@ var compare = function(PlayerSelection, ComputerPlay){
                     return "You lose! Try again.";
                 }
             }
-            if (PlayerSelection === "scissors") {
-                if (ComputerPlay === "rock") {
+            if (player === "scissors") {
+                if (computer === "rock") {
                     // rock wins
                     return "You lose! Try again.";
                 } else {
@@ -65,9 +64,11 @@ var compare = function(PlayerSelection, ComputerPlay){
                 }
             }
         };
-}
-var results = compare(PlayerSelection,ComputerPlay);
-console.log(results())
+
+
+const playerSelection = PlayerPlay()
+const computerSelection = ComputerPlay()
+console.log(playRound(playerSelection, computerSelection))
 
 /*
 Paper>Rock
