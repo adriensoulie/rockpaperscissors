@@ -9,6 +9,9 @@
 <body>
 <script>
 
+let input = prompt("What's your next move ? Choose rock, paper or scissors :D");
+
+
 function ComputerPlay() {
     var textArray = [
         'rock',
@@ -19,8 +22,8 @@ function ComputerPlay() {
     console.log(ComputerPlay); // test to see if its working fine (it is)
 }
 
-
-function PlayerPlay(){
+// Code for computer vs computer
+/*function PlayerPlay(){
     var textArrayUser= [
         'rock',
         'paper',
@@ -29,7 +32,7 @@ function PlayerPlay(){
     return textArrayUser[Math.floor(Math.random()*textArrayUser.length)];
 
     console.log(PlayerPlay); // test to see if its working fine (it is)
-}
+}*/
 
 
 function playRound(player, computer){
@@ -66,8 +69,9 @@ function playRound(player, computer){
         };
 
 
-const playerSelection = PlayerPlay()
+const playerSelection = input
 const computerSelection = ComputerPlay()
+console.log(computerSelection)
 console.log(playRound(playerSelection, computerSelection))
 
 /*
